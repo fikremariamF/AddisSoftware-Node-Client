@@ -6,6 +6,7 @@ const getStatement = (req, res) => {
 };
 
 const createSong = async (req, res) => {
+    console.log("sent body ",req)
   const song = new Song(req.body);
   try {
     await song.save();

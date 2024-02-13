@@ -3,8 +3,16 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import songRoutes from './routes/songRoutes.js';
+import cors from 'cors';
 
 const app = express();
+
+app.use(
+  cors({
+    credentials: true,
+  })
+);
+
 app.use(bodyParser.json());
 dotenv.config();
 const PORT = process.env.PORT || 5000;
